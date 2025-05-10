@@ -39,7 +39,7 @@ static err_t callback_resposta_recebida(void *arg, struct tcp_pcb *pcb, struct p
  */
 static err_t callback_conectado(void *arg, struct tcp_pcb *pcb, err_t err) {
 
-    ButtonStates_t* estados_botoes = (ButtonStates_t*)arg;
+    ButtonStates_t* estados_completos = (ButtonStates_t*)arg;
 
     if (err != ERR_OK) {
         printf("Erro ao conectar: %d\n", err);
@@ -49,11 +49,12 @@ static err_t callback_conectado(void *arg, struct tcp_pcb *pcb, err_t err) {
 
     tcp_recv(pcb, callback_resposta_recebida);
 
-    char corpo_json[128];
+    char corpo_json[192]; 
     snprintf(corpo_json, sizeof(corpo_json),
-             "{\"button_a\": %d, \"button_b\": %d}",
-             estados_botoes->button_a_pressed ? 1 : 0,
-             estados_botoes->button_b_pressed ? 1 : 0);
+             "{\"button_a\": %d, \"button_b\": %d, \"temperature\": %.2f}",
+             estados_completos->button_a_pressed ? 1 : 0,
+             estados_completos->button_b_pressed ? 1 : 0,
+             estados_completos->temperature);
     
     char requisicao[512];
     snprintf(requisicao, sizeof(requisicao),

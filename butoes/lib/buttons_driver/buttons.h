@@ -11,6 +11,7 @@
 typedef struct {
     bool button_a_pressed;
     bool button_b_pressed;
+    float temperature;
 } ButtonStates_t;
 
 /**

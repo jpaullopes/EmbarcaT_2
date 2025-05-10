@@ -15,6 +15,7 @@
 #include "buttons.h"
 #include "cliente_http.h"
 #include "wifi.h"
+#include "sensor_temp.h"
 
 // Configurações de comunicação
 #define INTERVALO_ENVIO_DADOS_BOTOES_MS 1000
@@ -22,7 +23,7 @@
 // Definições para Tasks do FreeRTOS
 #define BUTTON_TASK_PRIORITY   (tskIDLE_PRIORITY + 1)
 #define WIFI_TASK_PRIORITY     (tskIDLE_PRIORITY + 2)
-#define BUTTON_TASK_STACK_SIZE configMINIMAL_STACK_SIZE
+#define BUTTON_TASK_STACK_SIZE (configMINIMAL_STACK_SIZE + 256)
 #define WIFI_TASK_STACK_SIZE   configMINIMAL_STACK_SIZE * 2
 
 // Fila para comunicação entre tasks
@@ -41,10 +42,13 @@ static bool tentar_conectar_wifi_botoes_freertos(void);
 
 int main(void) {
     stdio_init_all();
-    printf("Sistema de Botões inicializando com FreeRTOS...\n");
+    printf("Sistema de Botões e Temperatura inicializando com FreeRTOS...\n");
 
     buttons_init();
     printf("Botões GPIO inicializados.\n");
+    sensor_temp_init();
+    printf("Sensor de temperatura inicializado.\n");
+
 
     // Cria a fila para eventos dos botões
     xButtonEventQueue = xQueueCreate(5, sizeof(ButtonStates_t));
@@ -75,22 +79,26 @@ static void button_task(void *pvParameters) {
     estado_anterior_botoes.button_a_pressed = false;
     estado_anterior_botoes.button_b_pressed = true;
 
+    buttons_read(&estado_anterior_botoes);
+
     while (true) {
         buttons_read(&estado_atual_botoes);
+        estado_atual_botoes.temperature = sensor_temp_read();
 
         bool mudou = (estado_atual_botoes.button_a_pressed != estado_anterior_botoes.button_a_pressed ||
                       estado_atual_botoes.button_b_pressed != estado_anterior_botoes.button_b_pressed);
 
         if (mudou) {
-            printf("Mudança Botões (Core %d): A=%s, B=%s\n", get_core_num(),
+            printf("Mudança Botões (Core %d): A=%s, B=%s. Temp: %.2f C\n", get_core_num(), // <<< ATUALIZADO
                    estado_atual_botoes.button_a_pressed ? "ON" : "OFF",
-                   estado_atual_botoes.button_b_pressed ? "ON" : "OFF");
+                   estado_atual_botoes.button_b_pressed ? "ON" : "OFF",
+                   estado_atual_botoes.temperature);
 
-            // Envia o novo estado para a fila
             if (xQueueSend(xButtonEventQueue, &estado_atual_botoes, (TickType_t)10) != pdPASS) {
                 printf("Falha ao enviar para a fila de botões!\n");
             }
-            estado_anterior_botoes = estado_atual_botoes;
+            estado_anterior_botoes.button_a_pressed = estado_atual_botoes.button_a_pressed;
+            estado_anterior_botoes.button_b_pressed = estado_atual_botoes.button_b_pressed;
         }
         vTaskDelay(pdMS_TO_TICKS(50));
     }
@@ -123,8 +131,7 @@ static void wifi_task(void *pvParameters) {
             if (wifi_conectado_status_botoes) {
                 uint32_t tempo_atual_ms = to_ms_since_boot(get_absolute_time());
                 if (tempo_atual_ms - ultimo_envio_botoes_ms >= INTERVALO_ENVIO_DADOS_BOTOES_MS) {
-                    printf("Enviando dados dos botões para a nuvem (Core %d)...\n", get_core_num());
-
+                    printf("Enviando dados (botões e temp: %.2fC) para a nuvem (Core %d)...\n",estado_recebido_botoes.temperature, get_core_num());
                     enviar_dados_para_nuvem(&estado_recebido_botoes);
 
                     ultimo_envio_botoes_ms = tempo_atual_ms;

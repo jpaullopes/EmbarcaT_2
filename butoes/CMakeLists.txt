@@ -41,6 +41,7 @@ add_executable(butoes
     lib/buttons_driver/buttons.c
     lib/http_client_module/http_client.c
     lib/wifi_module/wifi.c
+    lib/sensor_temp/sensor_temp.c
 )
 
 pico_set_program_name(butoes "butoes")
@@ -59,6 +60,7 @@ target_include_directories(butoes PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}/lib/buttons_driver
         ${CMAKE_CURRENT_LIST_DIR}/lib/http_client_module
         ${CMAKE_CURRENT_LIST_DIR}/lib/wifi_module
+        ${CMAKE_CURRENT_LIST_DIR}/lib/sensor_temp
         ${CMAKE_CURRENT_LIST_DIR}/config
 )
 
