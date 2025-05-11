@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include "pico/stdlib.h"
@@ -66,26 +66,21 @@ int main(void) {
 
     // Inicializa o estado anterior para forçar o primeiro envio ou ter referência
     memset(&estado_anterior_joystick, 0, sizeof(EstadoJoystick));
-    estado_anterior_joystick.direcao = DIRECAO_DESCONHECIDA; // Garante diferença inicial
-    estado_anterior_joystick.button_pressed = 2; // Um valor que não seja 0 ou 1
+    estado_anterior_joystick.direcao = DIRECAO_DESCONHECIDA; 
+    estado_anterior_joystick.button_pressed = 2; 
 
     printf("Iniciando loop principal...\n");
     while (true) {
-        cyw43_arch_poll(); // ESSENCIAL!
+        cyw43_arch_poll(); 
 
         ler_e_processar_joystick();
         
         if (wifi_conectado_status) { // Só tenta enviar se a conexão inicial foi bem sucedida
             tentar_enviar_dados_joystick();
         } else {
-            // Opcional: adicionar um log periódico se o Wi-Fi não conectou inicialmente
-            // Ou tentar reconectar aqui de forma simples após um longo tempo, se desejar,
-            // mas vamos começar sem isso.
             static uint32_t ultimo_log_wifi_falhou = 0;
             if (to_ms_since_boot(get_absolute_time()) - ultimo_log_wifi_falhou > 10000) { // A cada 10s
                 printf("WiFi não conectado. Não tentando enviar dados.\n");
-                // Poderia tentar reconectar aqui:
-                // wifi_conectado_status = tentar_conectar_wifi_inicialmente();
                 ultimo_log_wifi_falhou = to_ms_since_boot(get_absolute_time());
             }
         }
@@ -169,10 +164,6 @@ static void tentar_enviar_dados_joystick(void) {
             dados_para_envio.y_position = estado_atual_joystick.y_position;
             dados_para_envio.button_pressed = estado_atual_joystick.button_pressed;
             
-            // A função enviar_dados_para_nuvem em cliente_http.c tentará resolver DNS, conectar TCP, etc.
-            // Se o Wi-Fi tiver caído e se recuperado sozinho (pelo cyw43_arch_poll), isso pode funcionar.
-            // Se o Wi-Fi estiver realmente fora, as funções de rede dentro de enviar_dados_para_nuvem
-            // devem falhar graciosamente (ex: DNS timeout, TCP connect timeout).
             enviar_dados_para_nuvem(&dados_para_envio);
             ultimo_envio_dados_ms = tempo_atual_ms;
         }
