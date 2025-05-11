@@ -302,9 +302,9 @@ Os firmwares enviam dados ao servidor em formato JSON.
     Payload:
     ```json
     {
-      "button_a": 0, // 0: solto, 1: pressionado
-      "button_b": 1, // 0: solto, 1: pressionado
-      "temperature": 25.75 // Graus Celsius
+      "button_a": 0, 
+      "button_b": 1, 
+      "temperature": 25.75 
     }
     ```
 *   **Projeto `/rosa_dos_ventos` (Joystick):**
@@ -312,9 +312,9 @@ Os firmwares enviam dados ao servidor em formato JSON.
     Payload:
     ```json
     {
-      "x": 50,     // Valor do eixo X (0-100, aproximadamente)
-      "y": 75,     // Valor do eixo Y (0-100, aproximadamente)
-      "button": 0  // 0: solto, 1: pressionado
+      "x": 50,     
+      "y": 75,     
+      "button": 0  
     }
     ```
 
@@ -347,18 +347,18 @@ Aqui estão algumas imagens para ilustrar o projeto em funcionamento:
 
 ### 11.1. Dashboard de Botões e Temperatura
 
-![Dashboard de Botões e Temperatura](images\dashboard_button_state.png)
+![Dashboard de Botões e Temperatura](.\images\dashboard_button_state.png)
 
 *Este dashboard exibe o estado dos botões (pressionado ou não) e a temperatura atual.*
 
 ### 11.2. Dashboard do Joystick e Rosa dos Ventos
 
-![Dashboard do Joystick e Rosa dos Ventos](images\dashboard_joystick_state.png)
+![Dashboard do Joystick e Rosa dos Ventos](.\images\dashboard_joystick_state.png)
 
 *Este dashboard mostra as coordenadas X e Y do joystick, bem como a direção correspondente na rosa dos ventos.*
 
 ### 11.3. Hardware - BitDogLab
 
-![Hardware - BitDogLab](images\bitdoglab_plaquinha_image.png)
+![Hardware - BitDogLab](.\images\bitdoglab_plaquinha_image.png)
 
 *Visão geral da placa BitDogLab utilizada no projeto, mostrando os botões, joystick e outros componentes.*
