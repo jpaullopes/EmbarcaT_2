@@ -358,7 +358,7 @@ Aqui estão algumas imagens para ilustrar o projeto em funcionamento:
 *Este dashboard mostra as coordenadas X e Y do joystick, bem como a direção correspondente na rosa dos ventos.*
 
 ### 11.3. Hardware - BitDogLab
-
+ 
 ![Hardware - BitDogLab](./images/bitdoglab_plaquinha_image.png)
 
 *Visão geral da placa BitDogLab utilizada no projeto, mostrando os botões, joystick e outros componentes.*
