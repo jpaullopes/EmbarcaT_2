@@ -1,6 +1,21 @@
+/**
+ * @file buttons.c
+ * @brief Implementação do driver para botões
+ *
+ * Este arquivo implementa as funções para inicialização e leitura
+ * dos botões conectados ao microcontrolador Raspberry Pi Pico.
+ */
+
 #include "buttons.h"
 #include "hardware/gpio.h"
 
+/**
+ * @brief Inicializa os pinos GPIO para os botões.
+ *
+ * Esta função configura os pinos GPIO para os botões A e B como entradas
+ * com resistores pull-up internos habilitados. Isso permite detectar quando
+ * os botões são pressionados (conectados ao GND).
+ */
 void buttons_init(void) {
     // Botão A
     gpio_init(BUTTON_A_PIN);
@@ -17,6 +32,16 @@ void buttons_init(void) {
     // ou apenas leituras periódicas.
 }
 
+/**
+ * @brief Lê o estado atual dos botões.
+ *
+ * Esta função lê o estado atual dos pinos GPIO conectados aos botões A e B
+ * e armazena os resultados na estrutura ButtonStates_t fornecida.
+ * Com resistores pull-up, quando o botão é pressionado, o pino vai para estado LOW.
+ *
+ * @param states Ponteiro para a estrutura ButtonStates_t onde o estado será armazenado
+ * @note O estado de um botão será considerado como pressionado (true) quando o pino estiver em LOW
+ */
 void buttons_read(ButtonStates_t *states) {
     if (states == NULL) {
         return;

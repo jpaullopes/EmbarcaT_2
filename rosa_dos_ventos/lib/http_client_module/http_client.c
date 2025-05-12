@@ -1,11 +1,23 @@
+/**
+ * @file http_client.c
+ * @brief Implementação do cliente HTTP para comunicação com a nuvem
+ * 
+ * Este arquivo contém a implementação das funções para envio de dados
+ * do joystick para um servidor na nuvem através de requisições HTTP.
+ */
 #include "cliente_http.h"
 
 /**
  * @brief Callback para receber a resposta do servidor.
- * @param pcb PCB da conexão TCP.
- * @param p Buffer de dados recebidos.
- * @param err Código de erro.
- * @return ERR_OK se tudo ocorrer bem, ou um código de erro.
+ * 
+ * Esta função é chamada automaticamente quando dados são recebidos do servidor.
+ * Ela processa a resposta HTTP e exibe os dados recebidos.
+ * 
+ * @param arg Argumento do usuário (não utilizado)
+ * @param pcb PCB (Protocol Control Block) da conexão TCP
+ * @param p Buffer contendo os dados recebidos
+ * @param err Código de erro da operação
+ * @return ERR_OK se tudo ocorrer bem, ou um código de erro
  */
 static err_t callback_resposta_recebida(void *arg, struct tcp_pcb *pcb, struct pbuf *p, err_t err) {
     

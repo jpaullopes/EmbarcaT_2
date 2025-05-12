@@ -1,11 +1,24 @@
+/**
+ * @file http_client.c
+ * @brief Implementação do cliente HTTP para envio de dados para a nuvem
+ *
+ * Este arquivo implementa as funções do cliente HTTP que utiliza lwIP para
+ * enviar dados dos botões e temperatura para um servidor remoto via HTTP.
+ */
+
 #include "cliente_http.h"
 
 /**
  * @brief Callback para receber a resposta do servidor.
- * @param pcb PCB da conexão TCP.
- * @param p Buffer de dados recebidos.
- * @param err Código de erro.
- * @return ERR_OK se tudo ocorrer bem, ou um código de erro.
+ * 
+ * Esta função é chamada automaticamente pelo lwIP quando dados são recebidos 
+ * do servidor após o envio de uma requisição HTTP.
+ *
+ * @param arg Argumento passado para o callback (não utilizado)
+ * @param pcb PCB da conexão TCP
+ * @param p Buffer de dados recebidos
+ * @param err Código de erro
+ * @return ERR_OK se tudo ocorrer bem, ou um código de erro
  */
 static err_t callback_resposta_recebida(void *arg, struct tcp_pcb *pcb, struct pbuf *p, err_t err) {
     
@@ -30,12 +43,16 @@ static err_t callback_resposta_recebida(void *arg, struct tcp_pcb *pcb, struct p
 
 /**
  * @brief Callback para quando a conexão TCP é estabelecida.
- * @param arg Argumento passado para o callback (StatusButtonStates_t*).
- * @param pcb PCB da conexão TCP.
- * @param err Código de erro.
+ * 
+ * Esta função é chamada quando a conexão TCP com o servidor é estabelecida com sucesso.
+ * É neste momento que a requisição HTTP POST é montada e enviada para o servidor.
+ * 
+ * @param arg Argumento passado para o callback (ButtonStates_t*)
+ * @param pcb PCB da conexão TCP
+ * @param err Código de erro
  * @note É aqui que a requisição HTTP é enviada, após a conexão ser estabelecida.
- *      Tem que usar o PROXY_HOST no cabeçalho Host. 
- * @return ERR_OK se tudo ocorrer bem, ou um código de erro.
+ *      É necessário usar o PROXY_HOST no cabeçalho Host para funcionar corretamente.
+ * @return ERR_OK se tudo ocorrer bem, ou um código de erro
  */
 static err_t callback_conectado(void *arg, struct tcp_pcb *pcb, err_t err) {
 
@@ -83,9 +100,13 @@ static err_t callback_conectado(void *arg, struct tcp_pcb *pcb, err_t err) {
 
 /**
  * @brief Callback para quando a resolução DNS é concluída.
- * @param nome_host Nome do host que foi resolvido.
- * @param ip_resolvido Endereço IP resolvido.
- * @param arg Argumento passado para o callback (StatusButtonStates_t*).
+ * 
+ * Esta função é chamada quando o processo de resolução DNS para o nome do host é concluído.
+ * Se for bem-sucedido, inicia a conexão TCP para o endereço IP resolvido.
+ * 
+ * @param nome_host Nome do host que foi resolvido
+ * @param ip_resolvido Endereço IP resolvido
+ * @param arg Argumento passado para o callback (ButtonStates_t*)
  * @note Se a resolução falhar, imprime uma mensagem de erro. Em caso de sucesso,
  *       ele segue para tentar a conexão TCP.
  */
@@ -118,8 +139,15 @@ static void callback_dns_resolvido(const char *nome_host, const ip_addr_t *ip_re
 
 /**
  * @brief Envia os dados do ButtonStates_t para o servidor na nuvem.
- * @param dados_a_enviar Ponteiro para a estrutura StatusButtonStates_t com os dados a enviar.
- * @note Usar PROXY_HOST para resolução DNS. Assim que o DNS for resolvido, a conexão TCP é estabelecida e os dados são enviados.
+ * 
+ * Esta função inicia o processo de envio de dados para a nuvem.
+ * Primeiro, ela tenta resolver o nome de domínio do servidor por DNS.
+ * Dependendo do resultado, pode proceder diretamente com a conexão TCP
+ * ou aguardar a resolução DNS assíncrona.
+ * 
+ * @param dados_a_enviar Ponteiro para a estrutura ButtonStates_t com os dados a enviar
+ * @note Usar PROXY_HOST para resolução DNS. Assim que o DNS for resolvido, 
+ *       a conexão TCP é estabelecida e os dados são enviados.
  */
 void enviar_dados_para_nuvem(const ButtonStates_t* dados_a_enviar) {
     ip_addr_t endereco_ip;

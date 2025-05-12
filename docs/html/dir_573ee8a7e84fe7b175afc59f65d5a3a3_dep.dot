@@ -1,0 +1,17 @@
+digraph "rosa_dos_ventos"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_573ee8a7e84fe7b175afc59f65d5a3a3 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_573ee8a7e84fe7b175afc59f65d5a3a3.html",tooltip=""]
+    dir_573ee8a7e84fe7b175afc59f65d5a3a3 [shape=plaintext, label="rosa_dos_ventos"];
+  dir_31bb1a1bcfcbbb35ed20f8fea7dd6085 [label="build", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_31bb1a1bcfcbbb35ed20f8fea7dd6085.html",tooltip=""];
+  dir_6b33b989ca04e174053101e4ab48fa4c [label="config", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_6b33b989ca04e174053101e4ab48fa4c.html",tooltip=""];
+  dir_fb3daf6c7c5ebf3606c4c84700777edf [label="lib", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_fb3daf6c7c5ebf3606c4c84700777edf.html",tooltip=""];
+  dir_8ad9f215eb2c5aac9a2c962d49743d80 [label="src", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_8ad9f215eb2c5aac9a2c962d49743d80.html",tooltip=""];
+  }
+  dir_8ad9f215eb2c5aac9a2c962d49743d80->dir_fb3daf6c7c5ebf3606c4c84700777edf [headlabel="1", labeldistance=1.5 headhref="dir_000037_000022.html" href="dir_000037_000022.html" color="steelblue1" fontcolor="steelblue1"];
+}

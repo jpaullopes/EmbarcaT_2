@@ -1,0 +1,14 @@
+digraph "butoes/lib/http_client_module"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_2d50c7dd436dcc998de5e1b7254a4b0a {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="lib", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_2d50c7dd436dcc998de5e1b7254a4b0a.html",tooltip=""]
+  dir_6f50d6392bcf58b45e2dba55f816c488 [label="buttons_driver", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_6f50d6392bcf58b45e2dba55f816c488.html",tooltip=""];
+  dir_9d8990e960dd6062472b3ff5b72edd15 [label="http_client_module", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_9d8990e960dd6062472b3ff5b72edd15.html",tooltip=""];
+  }
+  dir_9d8990e960dd6062472b3ff5b72edd15->dir_6f50d6392bcf58b45e2dba55f816c488 [headlabel="1", labeldistance=1.5 headhref="dir_000018_000005.html" href="dir_000018_000005.html" color="steelblue1" fontcolor="steelblue1"];
+}

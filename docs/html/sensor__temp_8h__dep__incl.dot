@@ -1,0 +1,12 @@
+digraph "butoes/lib/sensor_temp/sensor_temp.h"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="butoes/lib/sensor_temp\l/sensor_temp.h",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Interface do driver para o sensor de temperatura."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="butoes/lib/sensor_temp\l/sensor_temp.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sensor__temp_8c.html",tooltip="Implementação do driver para o sensor de temperatura."];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="butoes/src/app_main.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$butoes_2src_2app__main_8c.html",tooltip="Aplicação principal do sistema de monitoramento de botões e temperatura."];
+}

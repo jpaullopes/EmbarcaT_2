@@ -1,0 +1,474 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Atividade_Embarca_2: Projeto Integrado de Monitoramento IoT com Raspberry Pi Pico W e Servidor em Nuvem</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Atividade_Embarca_2
+   </div>
+   <div id="projectbrief">Um projeto que usa a BitDogLab para coletar dados como mvimentos do joystick, butões e temperatura para envio para a nuvem</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Projeto Integrado de Monitoramento IoT com Raspberry Pi Pico W e Servidor em Nuvem</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="projeto-integrado-de-monitoramento-iot-com-raspberry-pi-pico-w-e-servidor-em-nuvem"></a></p>
+<p align="center"></p>
+<p align="center"></p>
+<p><img src="https://img.shields.io/badge/Hardware-Raspberry%20Pi%20Pico%20W-A22846?style=for-the-badge&amp;logo=raspberrypi" alt="Raspberry Pi Pico W" class="inline"/>&#160; <img src="https://img.shields.io/badge/RTOS-FreeRTOS-2E75B6?style=for-the-badge&amp;logo=freertos" alt="FreeRTOS" class="inline"/>&#160; <img src="https://img.shields.io/badge/Firmware%20Lang-C-555555?style=for-the-badge&amp;logo=c" alt="Linguagem C" class="inline"/>&#160; <img src="https://img.shields.io/badge/Backend-Python%20%7C%20Flask-3776AB?style=for-the-badge&amp;logo=python" alt="Python/Flask" class="inline"/>&#160; <img src="https://img.shields.io/badge/Real--time-Socket.IO-000000?style=for-the-badge&amp;logo=socket.io" alt="Socket.IO" class="inline"/>&#160; <img src="https://img.shields.io/badge/Deployment-Railway-DB2A7F?style=for-the-badge&amp;logo=railway" alt="Railway" class="inline"/> </p>
+<hr  />
+<h1><a class="anchor" id="sumário"></a>
+Sumário</h1>
+<ol type="1">
+<li><a class="el" href="#autotoc_md1-introdução">Introdução</a></li>
+<li><a class="el" href="#autotoc_md2-visão-geral-da-arquitetura">Visão Geral da Arquitetura</a><ul>
+<li><a class="el" href="#diagrama-da-arquitetura">Diagrama da Arquitetura</a></li>
+</ul>
+</li>
+<li><a class="el" href="#autotoc_md3-funcionalidades-detalhadas">Funcionalidades Detalhadas</a></li>
+<li><a class="el" href="#autotoc_md4-tecnologias-empregadas">Tecnologias Empregadas</a></li>
+<li><a class="el" href="#autotoc_md5-estrutura-do-repositório">Estrutura do Repositório</a></li>
+<li><a class="el" href="#autotoc_md6-pré-requisitos">Pré-requisitos</a></li>
+<li><a class="el" href="#autotoc_md7-configuração-e-instruções-de-execução">Configuração e Instruções de Execução</a><ul>
+<li><a class="el" href="#autotoc_md71-configuração-do-servidor-na-plataforma-railway">7.1. Configuração do Servidor na Plataforma Railway</a></li>
+<li><a class="el" href="#autotoc_md72-configuração-e-compilação-dos-firmwares">7.2. Configuração e Compilação dos Firmwares</a></li>
+<li><a class="el" href="#autotoc_md73-acesso-aos-dashboards">7.3. Acesso aos Dashboards</a></li>
+</ul>
+</li>
+<li><a class="el" href="#autotoc_md8-estrutura-dos-dados-transmitidos">Estrutura dos Dados Transmitidos</a></li>
+<li><a class="el" href="#autotoc_md9-dicas">Dicas</a></li>
+<li><a class="el" href="#autotoc_md10-licença">Licença</a></li>
+<li><a class="el" href="#autotoc_md11-visualização-do-projeto">Visualização do Projeto</a></li>
+</ol>
+<hr  />
+<h1><a class="anchor" id="autotoc_md1-introdução"></a>
+1. Introdução</h1>
+<p>Este projeto detalha a concepção e implementação de um sistema de Internet das Coisas (IoT) ponta-a-ponta. O sistema abrange a aquisição de dados de sensores e entradas de usuário, utilizando o microcontrolador Raspberry Pi Pico W, e a subsequente transmissão desses dados para um servidor hospedado em nuvem, permitindo a visualização e monitoramento em tempo real. A arquitetura modular consiste em dois firmwares distintos para o microcontrolador e uma aplicação de servidor web robusta.</p>
+<p>Este documento serve como um guia técnico abrangente, fornecendo todas as informações necessárias para a compreensão, configuração, compilação e execução de cada componente do projeto.</p>
+<h1><a class="anchor" id="autotoc_md2-visão-geral-da-arquitetura"></a>
+2. Visão Geral da Arquitetura</h1>
+<p>O sistema é arquitetonicamente segmentado em três componentes primários, interagindo para prover a funcionalidade completa:</p>
+<ul>
+<li><b>Firmware de Monitoramento de Botões e Temperatura (<code>/butoes</code>):</b> Desenvolvido em linguagem C e operando sobre o Sistema Operacional de Tempo Real (RTOS) FreeRTOS, este firmware é executado no Raspberry Pi Pico W. É responsável pela leitura do estado de dois botões físicos e pela aquisição da temperatura ambiente através do sensor interno do microcontrolador RP2040. Os dados agregados são transmitidos periodicamente via requisições HTTP POST para o servidor em nuvem.</li>
+<li><b>Firmware de Leitura de <a class="el" href="struct_joystick.html" title="Estrutura para representar um joystick.">Joystick</a> e Rosa dos Ventos (<code>/rosa_dos_ventos</code>):</b> Um segundo firmware, também para o Raspberry Pi Pico W e desenvolvido em C. Este realiza a leitura das coordenadas X e Y de um joystick analógico, bem como o estado de seu botão de pressão. Similarmente, os dados são transmitidos via HTTP POST ao servidor. Uma lógica adicional interpreta a posição do joystick como uma direção em uma rosa dos ventos, utilizada para enriquecer a visualização no cliente web.</li>
+<li><b>Servidor Web e Dashboard (<code>/servidor_railway</code>):</b> Uma aplicação backend construída em Python, utilizando o microframework Flask. O servidor atua como um gateway, recebendo os dados enviados pelos firmwares através de um endpoint HTTP POST dedicado. Utiliza a biblioteca Flask-SocketIO para retransmitir esses dados em tempo real para interfaces web (dashboards), que são renderizadas com HTML, CSS e JavaScript. A aplicação é projetada para implantação na plataforma de nuvem Railway.</li>
+</ul>
+<h2><a class="anchor" id="diagrama-da-arquitetura"></a>
+Diagrama da Arquitetura</h2>
+<div class="fragment"><div class="line">graph TD</div>
+<div class="line">    subgraph &quot;Raspberry Pi Pico W&quot;</div>
+<div class="line">        PICO_A[Firmware Botões e Temperatura]</div>
+<div class="line">        PICO_B[Firmware Joystick e Rosa dos Ventos]</div>
+<div class="line">    end</div>
+<div class="line"> </div>
+<div class="line">    subgraph &quot;Infraestrutura de Rede&quot; </div>
+<div class="line">        WIFI_ROUTER((Wi-Fi Local))</div>
+<div class="line">        INTERNET_CLOUD[(Internet)]</div>
+<div class="line">    end</div>
+<div class="line"> </div>
+<div class="line">    subgraph &quot;Servidor em Nuvem (Railway)&quot;</div>
+<div class="line">        SERVER_APP[Servidor Flask + Socket.IO]</div>
+<div class="line">    end</div>
+<div class="line"> </div>
+<div class="line">    subgraph &quot;Clientes Web (Navegador)&quot;</div>
+<div class="line">        DASH_BOTOES_CLIENT[Dashboard Botões/Temperatura]</div>
+<div class="line">        DASH_JOYSTICK_CLIENT[Dashboard Joystick]</div>
+<div class="line">    end</div>
+<div class="line"> </div>
+<div class="line">    PICO_A -- &quot;HTTP POST&quot; --&gt; WIFI_ROUTER</div>
+<div class="line">    PICO_B -- &quot;HTTP POST&quot; --&gt; WIFI_ROUTER</div>
+<div class="line">    WIFI_ROUTER -- &quot;Conexão de Internet&quot; --&gt; INTERNET_CLOUD</div>
+<div class="line">    INTERNET_CLOUD -- &quot;Tráfego HTTP&quot; --&gt; SERVER_APP</div>
+<div class="line"> </div>
+<div class="line">    SERVER_APP -- &quot;WebSockets&quot; --&gt; DASH_BOTOES_CLIENT</div>
+<div class="line">    SERVER_APP -- &quot;WebSockets&quot; --&gt; DASH_JOYSTICK_CLIENT</div>
+<div class="line"> </div>
+<div class="line">    style PICO_A fill:#A22846,stroke:#333,stroke-width:2px,color:#fff</div>
+<div class="line">    style PICO_B fill:#A22846,stroke:#333,stroke-width:2px,color:#fff</div>
+<div class="line">    style SERVER_APP fill:#3776AB,stroke:#333,stroke-width:2px,color:#fff</div>
+<div class="line">    style DASH_BOTOES_CLIENT fill:#007ACC,stroke:#333,stroke-width:2px,color:#fff</div>
+<div class="line">    style DASH_JOYSTICK_CLIENT fill:#007ACC,stroke:#333,stroke-width:2px,color:#fff</div>
+<div class="line">    style WIFI_ROUTER fill:#C9E4FF,stroke:#333,stroke-width:2px,color:#000</div>
+<div class="line">    style INTERNET_CLOUD fill:#C9E4FF,stroke:#333,stroke-width:2px,color:#000</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md3-funcionalidades-detalhadas"></a>
+3. Funcionalidades Detalhadas</h1>
+<ul>
+<li><b>Aquisição de Dados no Dispositivo Embarcado:</b><ul>
+<li>Leitura digital de múltiplos botões.</li>
+<li>Leitura analógica do sensor de temperatura interno do RP2040.</li>
+<li>Leitura analógica das coordenadas X/Y de um joystick.</li>
+<li>Leitura digital do botão de pressão do joystick.</li>
+</ul>
+</li>
+<li><b>Comunicação de Rede (Pico W):</b><ul>
+<li>Conectividade Wi-Fi utilizando o módulo CYW4373 integrado ao Raspberry Pi Pico W.</li>
+<li>Transmissão de dados para o servidor utilizando o protocolo HTTP (requisições POST).</li>
+</ul>
+</li>
+<li><b>Processamento no Servidor:</b><ul>
+<li>Recepção e parse de dados JSON provenientes dos dispositivos embarcados.</li>
+<li>Retransmissão dos dados em tempo real para múltiplos clientes web utilizando WebSockets (via Flask-SocketIO).</li>
+</ul>
+</li>
+<li><b>Visualização de Dados:</b><ul>
+<li>Dashboards web dedicados para exibição interativa do estado dos botões, temperatura, coordenadas do joystick e direção da rosa dos ventos.</li>
+<li>Atualizações da interface do usuário (UI) em tempo real, sem necessidade de recarregamento manual da página.</li>
+</ul>
+</li>
+<li><b>Gerenciamento de Tarefas Concorrentes (Projeto <code>/butoes</code>):</b><ul>
+<li>Utilização do FreeRTOS para gerenciamento eficiente e concorrente de tarefas de leitura de sensores e comunicação de rede.</li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md4-tecnologias-empregadas"></a>
+4. Tecnologias Empregadas</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Categoria   </th><th class="markdownTableHeadLeft">Tecnologia / Especificação    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>Hardware</b>   </td><td class="markdownTableBodyLeft"><img src="https://img.shields.io/badge/Microcontrolador-Raspberry%20Pi%20Pico%20W-A22846?style=flat-square&amp;logo=raspberrypi" alt="Raspberry Pi Pico W" class="inline"/>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><b>Firmware</b>   </td><td class="markdownTableBodyLeft"><img src="https://img.shields.io/badge/Linguagem-C-A8B9CC?style=flat-square&amp;logo=c" alt="Linguagem C" class="inline"/> <img src="https://img.shields.io/badge/RTOS-FreeRTOS-2E75B6?style=flat-square&amp;logo=freertos" alt="FreeRTOS" class="inline"/> <img src="https://img.shields.io/badge/SDK-Pico%20SDK-522644?style=flat-square&amp;logo=raspberrypi" alt="Pico SDK" class="inline"/>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>Backend</b>   </td><td class="markdownTableBodyLeft"><img src="https://img.shields.io/badge/Linguagem-Python%203-3776AB?style=flat-square&amp;logo=python" alt="Python 3" class="inline"/> <img src="https://img.shields.io/badge/Framework-Flask-000000?style=flat-square&amp;logo=flask" alt="Flask" class="inline"/>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><b>Comunicação Realtime</b>   </td><td class="markdownTableBodyLeft"><img src="https://img.shields.io/badge/Biblioteca-Socket.IO-010101?style=flat-square&amp;logo=socket.io" alt="Socket.IO" class="inline"/>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>Protocolos de Rede</b>   </td><td class="markdownTableBodyLeft"><img src="https://img.shields.io/badge/Aplicação-HTTP-FB8C00?style=flat-square" alt="HTTP" class="inline"/> <img src="https://img.shields.io/badge/Transporte-TCP/IP-0D47A1?style=flat-square" alt="TCP/IP" class="inline"/> <img src="https://img.shields.io/badge/Enlace-Wi--Fi-007ACC?style=flat-square" alt="Wi-Fi" class="inline"/>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><b>Frontend</b>   </td><td class="markdownTableBodyLeft"><img src="https://img.shields.io/badge/Marcação-HTML5-E34F26?style=flat-square&amp;logo=html5" alt="HTML5" class="inline"/> <img src="https://img.shields.io/badge/Estilização-CSS3-1572B6?style=flat-square&amp;logo=css3" alt="CSS3" class="inline"/> <img src="https://img.shields.io/badge/Script-JavaScript-F7DF1E?style=flat-square&amp;logo=javascript" alt="JavaScript" class="inline"/>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>Hospedagem (PaaS)</b>   </td><td class="markdownTableBodyLeft"><img src="https://img.shields.io/badge/Plataforma-Railway-DB2A7F?style=flat-square&amp;logo=railway" alt="Railway" class="inline"/>   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md5-estrutura-do-repositório"></a>
+5. Estrutura do Repositório</h1>
+<div class="fragment"><div class="line">Atividade2EBT/</div>
+<div class="line">├── butoes/                    # Projeto de firmware para botões e temperatura</div>
+<div class="line">│   ├── src/                   # Código fonte principal (app_main.c)</div>
+<div class="line">│   ├── lib/                   # Módulos de drivers e comunicação (wifi, http_client)</div>
+<div class="line">│   │   ├── http_client_module/</div>
+<div class="line">│   │   │    └── cliente_http.h # CONFIGURAR SERVIDOR AQUI</div>
+<div class="line">│   │   ├── wifi_module/</div>
+<div class="line">│   │   │    └── wifi.h        # CONFIGURAR WI-FI AQUI</div>
+<div class="line">│   │   ├──buttons_driver/</div>
+<div class="line">│   │   │    └── buttons.h     # Arquivo referente aos drivers dos butões</div>
+<div class="line">│   │   └──sensor_temp/</div>
+<div class="line">│   │        └── sensor_temp.h # Arquivo referente aos drivers do sensor de temperatura</div>
+<div class="line">│   ├── config/                # Arquivos de configuração (FreeRTOS, LwIP)</div>
+<div class="line">│   ├── CMakeLists.txt         # Script de build CMake</div>
+<div class="line">│   └── README.md              # Documentação específica do submódulo (se houver)</div>
+<div class="line">│</div>
+<div class="line">├── rosa_dos_ventos/           # Projeto de firmware para joystick</div>
+<div class="line">│   ├── src/                   # Código fonte principal (app_main.c)</div>
+<div class="line">│   ├── lib/                   # Módulos de drivers e comunicação </div>
+<div class="line">│   │   ├── http_client_module/</div>
+<div class="line">│   │   │    └── cliente_http.h # CONFIGURAR SERVIDOR AQUI</div>
+<div class="line">│   │   ├── wifi_module/</div>
+<div class="line">│   │   │    └── wifi.h         # CONFIGURAR WI-FI AQUI</div>
+<div class="line">│   │   └──joystick_driver/</div>
+<div class="line">│   │        └── joystick.h    # Arquivos referentes aos drivers do joystick</div>
+<div class="line">│   ├── config/                # Arquivos de configuração (LwIP)</div>
+<div class="line">│   ├── CMakeLists.txt         # Script de build CMake</div>
+<div class="line">│   └── README.md              # Documentação específica do submódulo (se houver)</div>
+<div class="line">│</div>
+<div class="line">├── servidor_railway/          # Aplicação do servidor Flask</div>
+<div class="line">│   ├── static/                # Arquivos estáticos </div>
+<div class="line">│   ├── templates/             # Templates HTML para os dashboards</div>
+<div class="line">│   ├── app.py                 # Lógica principal do servidor</div>
+<div class="line">│   ├── requirements.txt       # Dependências Python do servidor</div>
+<div class="line">│   ├── Procfile               # Comando de inicialização para Railway </div>
+<div class="line">│   └── README.md              # Documentação específica do servidor </div>
+<div class="line">│</div>
+<div class="line">└── README.md                 </div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md6-pré-requisitos"></a>
+6. Pré-requisitos</h1>
+<p>Antes de iniciar a configuração e execução do projeto, assegure-se de que os seguintes pré-requisitos sejam atendidos:</p>
+<ul>
+<li><b>Hardware:</b><ul>
+<li>Raspberry Pi Pico W(ou uma BitDogLab).</li>
+<li>Componentes eletrônicos: botões, joystick analógico.</li>
+<li>Cabo Micro-USB para programação e alimentação.</li>
+</ul>
+</li>
+<li><b>Software (Ambiente de Desenvolvimento Firmware):</b><ul>
+<li><a href="https://github.com/raspberrypi/pico-sdk">Raspberry Pi Pico SDK</a> devidamente instalado e configurado.</li>
+<li><a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm">Toolchain ARM GCC</a>.</li>
+<li>CMake (versão 3.13 ou superior).</li>
+<li>Ninja ou Make como sistema de build.</li>
+<li>Kernel do <a href="https://github.com/FreeRTOS/FreeRTOS-Kernel">FreeRTOS para RP2040</a> acessível. A variável de ambiente <code>FREERTOS_KERNEL_PATH</code> deve apontar para o diretório raiz do kernel do FreeRTOS.</li>
+</ul>
+</li>
+<li><b>Software (Ambiente de Desenvolvimento Servidor):</b><ul>
+<li>Python (versão 3.8 ou superior).</li>
+<li><code>pip</code> (gerenciador de pacotes Python).</li>
+<li>Git para versionamento de código.</li>
+</ul>
+</li>
+<li><b>Serviços Externos:</b><ul>
+<li>Conta na plataforma <a href="https://railway.app/">Railway</a> para hospedagem do servidor.</li>
+<li>Acesso a uma rede Wi-Fi com conexão à internet para os dispositivos Pico W.</li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md7-configuração-e-instruções-de-execução"></a>
+7. Configuração e Instruções de Execução</h1>
+<p>Siga os passos abaixo para configurar e executar cada componente do sistema.</p>
+<h2><a class="anchor" id="autotoc_md71-configuração-do-servidor-na-plataforma-railway"></a>
+7.1. Configuração do Servidor na Plataforma Railway</h2>
+<p>O servidor backend deve ser implantado na plataforma Railway para obter o endereço de host e a porta de comunicação necessários aos firmwares.</p>
+<ol type="1">
+<li><b>Preparação do Código do Servidor:</b><ul>
+<li>Navegue até o diretório <code>/servidor_railway</code>.</li>
+<li>Certifique-se de que o arquivo <code>requirements.txt</code> lista todas as dependências Python (Flask, Flask-SocketIO, gunicorn, eventlet, etc.).</li>
+<li>Crie um arquivo <code>Procfile</code> (sem extensão) na raiz do diretório <code>/servidor_railway</code> com o seguinte conteúdo (ou similar, dependendo da sua preferência de servidor WSGI): <code> web: gunicorn -k eventlet -w 1 app:app -b 0.0.0.0:$PORT </code> Este comando instrui o Railway a iniciar a aplicação Flask (<code>app:app</code> em <code><a class="el" href="app_8py.html">app.py</a></code>) usando Gunicorn com o worker <code>eventlet</code> (essencial para Socket.IO) na porta definida pela variável de ambiente <code>$PORT</code>.</li>
+</ul>
+</li>
+<li><b>Implantação no Railway:</b><ul>
+<li>Faça login na sua conta <a href="https://railway.app/">Railway</a>.</li>
+<li>Crie um novo projeto ("New Project").</li>
+<li>Escolha "Deploy from GitHub repo" e selecione o repositório onde este projeto está hospedado.</li>
+<li>Configure o serviço:<ul>
+<li><b>Root Directory:</b> Se o seu repositório contém múltiplas pastas, especifique <code>/servidor_railway</code> como o diretório raiz para este serviço.</li>
+<li>O Railway deve detectar automaticamente o <code>Procfile</code> e o <code>requirements.txt</code> para configurar o ambiente Python.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><b>Obtenção do Endereço Público e Porta TCP para os Firmwares:</b><ul>
+<li>Após a implantação bem-sucedida, o Railway fornecerá uma URL pública para acessar sua aplicação web (ex: <code>meu-servico.up.railway.app</code>). Esta URL é para acesso HTTP/HTTPS aos dashboards.</li>
+<li>Para a comunicação TCP direta dos firmwares (conforme <code>cliente_http.c</code>), você precisará de um <b>endereço de proxy TCP público e a porta externa associada</b>, que o Railway pode prover através de seus serviços de rede.<ul>
+<li>No painel do seu serviço no Railway, navegue até a aba <b>"Networking"</b> ou <b>"Settings"</b> (pode variar).</li>
+<li>Procure por opções de "TCP Proxy" ou "Public Networking". Você precisará gerar um endereço público no formato <code>subdomain.tcp.railway.app</code> e uma porta externa associada (ex: <code>12345</code>).</li>
+<li><b>Atenção:</b> Este endereço (<code>PROXY_HOST</code>) e porta (<code>PROXY_PORT</code>) são cruciais e <b>DEVEM SER ATUALIZADOS</b> nos arquivos de configuração dos firmwares. <code>c // Valores de EXEMPLO em cliente_http.h // #define PROXY_HOST "nome-do-seu-proxy.tcp.railway.app" // #define PROXY_PORT 12345 </code></li>
+</ul>
+</li>
+<li><b>Nota Importante:</b> Se uma opção de proxy TCP direto não estiver evidente ou disponível no seu plano Railway, a comunicação TCP pura dos firmwares pode necessitar de ajustes na implementação do cliente HTTP no firmware (para usar HTTP sobre a URL pública padrão) ou configurações de rede mais avançadas no Railway. A abordagem atual dos firmwares (<code>cliente_http.c</code>) pressupõe um endpoint TCP (host:porta) direto.</li>
+</ul>
+</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md72-configuração-e-compilação-dos-firmwares"></a>
+7.2. Configuração e Compilação dos Firmwares</h2>
+<p><b>Passos Comuns para ambos os Firmwares (<code>/butoes</code> e <code>/rosa_dos_ventos</code>):</b></p>
+<ol type="1">
+<li><b>Configurar Credenciais Wi-Fi:</b><ul>
+<li>Edite os arquivos:<ul>
+<li><code>/butoes/lib/wifi_module/wifi.h</code></li>
+<li><code>/rosa_dos_ventos/lib/wifi_module/wifi.h</code></li>
+</ul>
+</li>
+<li>Insira o SSID (nome da rede) e a senha da sua rede Wi-Fi local nas macros: <code>c #define NOME_REDE_WIFI "SUA_REDE_WIFI" #define SENHA_REDE_WIFI "SUA_SENHA_WIFI" </code></li>
+</ul>
+</li>
+<li><b>Atualizar Endereço do Servidor Railway:</b><ul>
+<li>Edite os arquivos:<ul>
+<li><code>/butoes/lib/http_client_module/cliente_http.h</code></li>
+<li><code>/rosa_dos_ventos/lib/http_client_module/cliente_http.h</code></li>
+</ul>
+</li>
+<li>Substitua os valores das macros <code>PROXY_HOST</code> e <code>PROXY_PORT</code> com o endereço de proxy TCP e a porta externa obtidos do seu serviço no Railway (conforme Etapa 7.1.3): <code>c // Exemplo de substituição (UTILIZE OS SEUS DADOS REAIS DO RAILWAY) #define PROXY_HOST "meu-servico-proxy.tcp.railway.app" #define PROXY_PORT 54321 // Porta externa fornecida pelo Railway </code></li>
+</ul>
+</li>
+</ol>
+<p><b>Compilação (Exemplo para o projeto <code>/butoes</code>; análogo para <code>/rosa_dos_ventos</code>):</b></p>
+<p>É crucial que as variáveis de ambiente <code>PICO_SDK_PATH</code> e, para o projeto <code>/butoes</code>, <code>FREERTOS_KERNEL_PATH</code> estejam corretamente definidas no seu terminal ou ambiente de build.</p>
+<div class="fragment"><div class="line"># Navegue para o diretório do projeto de firmware específico</div>
+<div class="line">cd Atividade2EBT/butoes # ou cd Atividade2EBT/rosa_dos_ventos</div>
+<div class="line"> </div>
+<div class="line"># Crie um diretório de build (se não existir) e acesse-o</div>
+<div class="line">mkdir -p build</div>
+<div class="line">cd build</div>
+<div class="line"> </div>
+<div class="line"># Execute o CMake para gerar os arquivos de build</div>
+<div class="line"># Exemplo para /butoes (requer FreeRTOS):</div>
+<div class="line"># cmake -DPICO_SDK_PATH=/path/to/pico-sdk -DFREERTOS_KERNEL_PATH=/path/to/FreeRTOS-Kernel ..</div>
+<div class="line"># Exemplo para /rosa_dos_ventos (não requer FreeRTOS explicitamente aqui, mas depende do SDK):</div>
+<div class="line"># cmake -DPICO_SDK_PATH=/path/to/pico-sdk ..</div>
+<div class="line"># Se as variáveis de ambiente PICO_SDK_PATH e FREERTOS_KERNEL_PATH estiverem configuradas globalmente:</div>
+<div class="line">cmake ..</div>
+<div class="line"> </div>
+<div class="line"># Compile o projeto utilizando Ninja (ou make, se preferir)</div>
+<div class="line">ninja</div>
+<div class="line"># ou, alternativamente:</div>
+<div class="line"># make -j$(nproc) # Compilação paralela usando todos os cores disponíveis</div>
+</div><!-- fragment --><p><b>Gravação do Firmware na Raspberry Pi Pico W:</b></p>
+<ol type="1">
+<li>Conecte a Raspberry Pi Pico W ao computador mantendo o botão <code>BOOTSEL</code> pressionado.</li>
+<li>Solte o botão <code>BOOTSEL</code> após a conexão. O dispositivo será montado como uma unidade de armazenamento em massa (RPI-RP2).</li>
+<li>Copie o arquivo de firmware <code>.uf2</code> gerado (ex: <code>butoes.uf2</code> ou <code>joystick.uf2</code>), localizado no diretório <code>build</code> do respectivo projeto, para a unidade de armazenamento da Pico W.</li>
+<li>A placa reiniciará automaticamente com o novo firmware.</li>
+<li>Para depuração, utilize um monitor serial.</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md73-acesso-aos-dashboards"></a>
+7.3. Acesso aos Dashboards</h2>
+<p>Com o servidor implantado no Railway e os firmwares configurados e gravados nos dispositivos Pico W:</p>
+<ol type="1">
+<li>Certifique-se de que os dispositivos Pico W estejam alimentados e conectados à rede Wi-Fi configurada. Eles devem começar a enviar dados para o servidor.</li>
+<li><p class="startli">Abra um navegador web e acesse as URLs dos dashboards, utilizando o domínio público principal fornecido pelo Railway para o seu serviço (ex: <code><a href="https://">https://</a>&lt;seu-servico&gt;.up.railway.app</code>):</p><ul>
+<li><b>Dashboard de Botões e Temperatura:</b> <code><a href="https://">https://</a>&lt;seu-servico&gt;.up.railway.app/dashboard/botoes</code></li>
+<li><b>Dashboard do <a class="el" href="struct_joystick.html" title="Estrutura para representar um joystick.">Joystick</a>:</b> <code><a href="https://">https://</a>&lt;seu-servico&gt;.up.railway.app/dashboard/joystick</code></li>
+</ul>
+<p class="startli">Substitua <code>&lt;seu-servico&gt;.up.railway.app</code> pela URL real do seu serviço implantado.</p>
+</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md8-estrutura-dos-dados-transmitidos"></a>
+8. Estrutura dos Dados Transmitidos</h1>
+<p>Os firmwares enviam dados ao servidor em formato JSON.</p>
+<ul>
+<li><b>Projeto <code>/butoes</code> (Botões e Temperatura):</b> Endpoint: <code>/data/botoes_temp</code> (POST) Payload: <code>json { "button_a": 0, "button_b": 1, "temperature": 25.75 } </code></li>
+<li><b>Projeto <code>/rosa_dos_ventos</code> (<a class="el" href="struct_joystick.html" title="Estrutura para representar um joystick.">Joystick</a>):</b> Endpoint: <code>/data/joystick</code> (POST) Payload: <code>json { "x": 50, \ilinebr&lt;br&gt; "y": 75, \ilinebr&lt;br&gt; "button": 0 \ilinebr&lt;br&gt; } </code></li>
+</ul>
+<p>O servidor, ao receber esses dados, os retransmite via Socket.IO para os respectivos dashboards.</p>
+<h1><a class="anchor" id="autotoc_md9-dicas"></a>
+9. Dicas</h1>
+<ul>
+<li><b>Pico W não conecta ao Wi-Fi:</b><ul>
+<li>Verifique as credenciais Wi-Fi (<code>NOME_REDE_WIFI</code>, <code>SENHA_REDE_WIFI</code>) nos arquivos <code>wifi.h</code>.</li>
+<li>Confirme se a rede Wi-Fi é 2.4 GHz.</li>
+<li>Use o monitor serial para mensagens de depuração da conexão Wi-Fi.</li>
+</ul>
+</li>
+<li><b>Dados não aparecem no Dashboard:</b><ul>
+<li>Verifique se o servidor no Railway está rodando sem erros (consulte os logs do Railway).</li>
+<li>Confirme se <code>PROXY_HOST</code> e <code>PROXY_PORT</code> nos arquivos <code>cliente_http.h</code> estão corretos e correspondem ao TCP Proxy do Railway.</li>
+<li>Use o monitor serial do Pico W para verificar se há erros ao enviar dados HTTP.</li>
+<li>Abra o console do desenvolvedor do navegador no dashboard para verificar erros de JavaScript ou conexão WebSocket.</li>
+</ul>
+</li>
+<li><b>Erro de compilação do firmware:</b><ul>
+<li>Certifique-se de que <code>PICO_SDK_PATH</code> (e <code>FREERTOS_KERNEL_PATH</code> para <code>/butoes</code>) estão corretamente definidos e apontam para os diretórios corretos.</li>
+<li>Reconfigure o arquivo <code>CMakeList.txt</code> e tente compilar novamente.</li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md10-licença"></a>
+10. Licença</h1>
+<p>Este projeto é distribuído sob a licença MIT. Veja o arquivo <code>LICENSE</code> para mais detalhes.</p>
+<h1><a class="anchor" id="autotoc_md11-visualização-do-projeto"></a>
+11. Visualização do Projeto</h1>
+<p>Aqui estão algumas imagens para ilustrar o projeto em funcionamento:</p>
+<h2><a class="anchor" id="autotoc_md111-dashboard-de-botões-e-temperatura"></a>
+11.1. Dashboard de Botões e Temperatura</h2>
+<div class="image">
+<img src="dashboard_button_temp.png" alt=""/>
+<div class="caption">
+Dashboard de Botões e Temperatura</div></div>
+    <p><em>Este dashboard exibe o estado dos botões (pressionado ou não) e a temperatura atual.</em></p>
+<h2><a class="anchor" id="autotoc_md112-dashboard-do-joystick-e-rosa-dos-ventos"></a>
+11.2. Dashboard do Joystick e Rosa dos Ventos</h2>
+<div class="image">
+<img src="dashboard_joystick_state.png" alt=""/>
+<div class="caption">
+Dashboard do Joystick e Rosa dos Ventos</div></div>
+    <p><em>Este dashboard mostra as coordenadas X e Y do joystick, bem como a direção correspondente na rosa dos ventos.</em></p>
+<h2><a class="anchor" id="autotoc_md113-hardware---bitdoglab"></a>
+11.3. Hardware - BitDogLab</h2>
+<div class="image">
+<img src="bitdoglab_plaquinha_image.png" alt=""/>
+<div class="caption">
+Hardware - BitDogLab</div></div>
+    <p><em>Visão geral da placa BitDogLab utilizada no projeto, mostrando os botões, joystick e outros componentes.</em> </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

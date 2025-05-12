@@ -1,8 +1,22 @@
+/**
+ * @file wifi.c
+ * @brief Implementação do módulo Wi-Fi
+
+ *
+ * Este arquivo implementa as funções para inicialização e controle
+ * do módulo Wi-Fi do Raspberry Pi Pico W.
+ */
+
 #include "wifi.h"
 #include "pico/cyw43_arch.h"
 
 /**
  * @brief Inicializa a conexão Wi-Fi.
+ * 
+ * Esta função inicializa o hardware Wi-Fi CYW43, configura o modo estação
+ * e tenta estabelecer conexão com a rede Wi-Fi configurada. Em caso de falha
+ * na inicialização, a função retorna imediatamente com código de erro.
+ * 
  * @return 0 se a conexão for bem-sucedida, -1 caso contrário.
  * @note Inicializa o módulo Wi-Fi, ativa o modo estação e tenta conectar à rede especificada.
  *       O nome da rede e a senha são definidos nas constantes NOME_REDE_WIFI e SENHA_REDE_WIFI.

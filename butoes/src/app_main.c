@@ -1,3 +1,14 @@
+/**
+ * @file app_main.c
+ * @brief Aplicação principal do sistema de monitoramento de botões e temperatura
+ * @author João Paulo Lopes
+ * @date Maio 2025
+ *
+ * Este arquivo implementa a aplicação principal que monitora o estado dos botões
+ * e a temperatura, enviando os dados para a nuvem através de uma conexão Wi-Fi.
+ * A aplicação utiliza o sistema operacional FreeRTOS para gerenciar múltiplas tarefas.
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -17,27 +28,67 @@
 #include "wifi.h"
 #include "sensor_temp.h"
 
-// Configurações de comunicação
+/**
+ * @defgroup APP_MAIN Aplicação Principal
+ * @{
+ */
+
+/**
+ * @brief Intervalo em milissegundos para envio de dados para a nuvem
+ */
 #define INTERVALO_ENVIO_DADOS_BOTOES_MS 1000
 
-// Definições para Tasks do FreeRTOS
-#define BUTTON_TASK_PRIORITY   (tskIDLE_PRIORITY + 1)
-#define WIFI_TASK_PRIORITY     (tskIDLE_PRIORITY + 2)
-#define BUTTON_TASK_STACK_SIZE (configMINIMAL_STACK_SIZE + 256)
-#define WIFI_TASK_STACK_SIZE   configMINIMAL_STACK_SIZE * 2
+/**
+ * @brief Prioridades e tamanhos de stack para tasks do FreeRTOS
+ * @{
+ */
+#define BUTTON_TASK_PRIORITY   (tskIDLE_PRIORITY + 1) /**< Prioridade da task de botões */
+#define WIFI_TASK_PRIORITY     (tskIDLE_PRIORITY + 2) /**< Prioridade da task de Wi-Fi (maior para garantir envio de dados) */
+#define BUTTON_TASK_STACK_SIZE (configMINIMAL_STACK_SIZE + 256) /**< Tamanho da stack da task de botões */
+#define WIFI_TASK_STACK_SIZE   configMINIMAL_STACK_SIZE * 2     /**< Tamanho da stack da task de Wi-Fi */
+/** @} */
 
-// Fila para comunicação entre tasks
+/**
+ * @brief Fila para comunicação entre tasks
+ * 
+ * Esta fila é usada para passar eventos de mudança dos botões da task de botões
+ * para a task de Wi-Fi, que então envia os dados para a nuvem.
+ */
 static QueueHandle_t xButtonEventQueue = NULL;
 
-// Variáveis Globais para Wi-Fi
-static bool wifi_conectado_status_botoes = false;
-static uint32_t ultimo_envio_botoes_ms = 0;
+/**
+ * @brief Variáveis globais para gerenciamento do estado Wi-Fi
+ * @{
+ */
+static bool wifi_conectado_status_botoes = false;   /**< Indica se o Wi-Fi está conectado */
+static uint32_t ultimo_envio_botoes_ms = 0;         /**< Timestamp do último envio de dados */
+/** @} */
 
-// Protótipos das Tasks
+/**
+ * @brief Protótipos das tasks FreeRTOS
+ * @{
+ */
+/**
+ * @brief Task responsável por monitorar os botões e enviar atualizações para a task Wi-Fi
+ * @param pvParameters Parâmetros passados para a task (não utilizado)
+ */
 static void button_task(void *pvParameters);
-static void wifi_task(void *pvParameters);
 
-// Protótipos de Funções Locais
+/**
+ * @brief Task responsável por gerenciar a conexão Wi-Fi e enviar dados para a nuvem
+ * @param pvParameters Parâmetros passados para a task (não utilizado)
+ */
+static void wifi_task(void *pvParameters);
+/** @} */
+
+/**
+ * @brief Protótipos de funções auxiliares
+ * @{
+ */
+/**
+ * @brief Tenta estabelecer conexão Wi-Fi
+ * @return true se a conexão foi bem-sucedida, false caso contrário
+ */
 static bool tentar_conectar_wifi_botoes_freertos(void);
 
 int main(void) {
