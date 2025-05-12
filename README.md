@@ -347,7 +347,7 @@ Aqui estão algumas imagens para ilustrar o projeto em funcionamento:
 
 ### 11.1. Dashboard de Botões e Temperatura
 
-![Dashboard de Botões e Temperatura](./images/dashboard_button_state.png)
+![Dashboard de Botões e Temperatura](./images/dashboard_button_temp.png)
 
 *Este dashboard exibe o estado dos botões (pressionado ou não) e a temperatura atual.*
 
