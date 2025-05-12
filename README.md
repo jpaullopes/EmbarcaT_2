@@ -29,7 +29,7 @@
 9.  [Dicas](#9-dicas)
 10. [Licença](#10-licença)
 11. [Visualização do Projeto](#11-visualização-do-projeto)
-11. [Visualização do Projeto](#11-visualização-do-projeto)
+12. [Documentação Gerada](#12-documentação-gerada)
 
 ---
 
@@ -339,7 +339,7 @@ O servidor, ao receber esses dados, os retransmite via Socket.IO para os respect
 
 ## 10. Licença
 
-Este projeto é distribuído sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+Este projeto é distribuído sob a licença MIT. Veja o arquivo [`LICENSE`](./LICENSE) para mais detalhes.
 
 
 ## 11. Visualização do Projeto
