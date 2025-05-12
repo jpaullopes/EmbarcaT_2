@@ -29,6 +29,7 @@
 9.  [Dicas](#9-dicas)
 10. [Licença](#10-licença)
 11. [Visualização do Projeto](#11-visualização-do-projeto)
+11. [Visualização do Projeto](#11-visualização-do-projeto)
 
 ---
 
@@ -362,3 +363,10 @@ Aqui estão algumas imagens para ilustrar o projeto em funcionamento:
 ![Hardware - BitDogLab](./images/bitdoglab_plaquinha_image.png)
 
 *Visão geral da placa BitDogLab utilizada no projeto, mostrando os botões, joystick e outros componentes.*
+
+
+## 12. Documentação Gerada
+
+A documentação completa do projeto, gerada com Doxygen, pode ser acessada no seguinte link:
+
+[Documentação do Projeto](https://jpaullopes.github.io/EmbarcaT_2/)
