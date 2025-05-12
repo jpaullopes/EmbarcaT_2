@@ -1,0 +1,12 @@
+var searchData=
+[
+  ['mem_5falignment_0',['MEM_ALIGNMENT',['../d4/d91/butoes_2config_2lwipopts_8h.html#a97343214666ee6dcb18c0bd77b441ea7',1,'MEM_ALIGNMENT:&#160;lwipopts.h'],['../db/d66/rosa__dos__ventos_2config_2lwipopts_8h.html#a97343214666ee6dcb18c0bd77b441ea7',1,'MEM_ALIGNMENT:&#160;lwipopts.h']]],
+  ['mem_5fdebug_1',['MEM_DEBUG',['../d4/d91/butoes_2config_2lwipopts_8h.html#a2d7bc380695eeedb1af50c3808613afe',1,'MEM_DEBUG:&#160;lwipopts.h'],['../db/d66/rosa__dos__ventos_2config_2lwipopts_8h.html#a2d7bc380695eeedb1af50c3808613afe',1,'MEM_DEBUG:&#160;lwipopts.h']]],
+  ['mem_5flibc_5fmalloc_2',['MEM_LIBC_MALLOC',['../d4/d91/butoes_2config_2lwipopts_8h.html#a4ef345cc270912bd2230b1c5ec51dfc8',1,'MEM_LIBC_MALLOC:&#160;lwipopts.h'],['../db/d66/rosa__dos__ventos_2config_2lwipopts_8h.html#a4ef345cc270912bd2230b1c5ec51dfc8',1,'MEM_LIBC_MALLOC:&#160;lwipopts.h']]],
+  ['mem_5fsize_3',['MEM_SIZE',['../d4/d91/butoes_2config_2lwipopts_8h.html#a2dcf8c45f945dd0c4301a94700f2112c',1,'MEM_SIZE:&#160;lwipopts.h'],['../db/d66/rosa__dos__ventos_2config_2lwipopts_8h.html#a2dcf8c45f945dd0c4301a94700f2112c',1,'MEM_SIZE:&#160;lwipopts.h']]],
+  ['mem_5fstats_4',['MEM_STATS',['../d4/d91/butoes_2config_2lwipopts_8h.html#a61ec04a08c4fde690d10819e582656a7',1,'MEM_STATS:&#160;lwipopts.h'],['../db/d66/rosa__dos__ventos_2config_2lwipopts_8h.html#a61ec04a08c4fde690d10819e582656a7',1,'MEM_STATS:&#160;lwipopts.h']]],
+  ['memp_5fdebug_5',['MEMP_DEBUG',['../d4/d91/butoes_2config_2lwipopts_8h.html#ad80231923f7a808d49eba5ec57d63616',1,'MEMP_DEBUG:&#160;lwipopts.h'],['../db/d66/rosa__dos__ventos_2config_2lwipopts_8h.html#ad80231923f7a808d49eba5ec57d63616',1,'MEMP_DEBUG:&#160;lwipopts.h']]],
+  ['memp_5fnum_5farp_5fqueue_6',['MEMP_NUM_ARP_QUEUE',['../d4/d91/butoes_2config_2lwipopts_8h.html#a087b00ea20a7edebcad33a1a1353a5d7',1,'MEMP_NUM_ARP_QUEUE:&#160;lwipopts.h'],['../db/d66/rosa__dos__ventos_2config_2lwipopts_8h.html#a087b00ea20a7edebcad33a1a1353a5d7',1,'MEMP_NUM_ARP_QUEUE:&#160;lwipopts.h']]],
+  ['memp_5fnum_5ftcp_5fseg_7',['MEMP_NUM_TCP_SEG',['../d4/d91/butoes_2config_2lwipopts_8h.html#aa35fb3a1a76661e3ffb9722a57092de3',1,'MEMP_NUM_TCP_SEG:&#160;lwipopts.h'],['../db/d66/rosa__dos__ventos_2config_2lwipopts_8h.html#aa35fb3a1a76661e3ffb9722a57092de3',1,'MEMP_NUM_TCP_SEG:&#160;lwipopts.h']]],
+  ['memp_5fstats_8',['MEMP_STATS',['../d4/d91/butoes_2config_2lwipopts_8h.html#ab8c2430be0e567a7499a95454aaa6041',1,'MEMP_STATS:&#160;lwipopts.h'],['../db/d66/rosa__dos__ventos_2config_2lwipopts_8h.html#ab8c2430be0e567a7499a95454aaa6041',1,'MEMP_STATS:&#160;lwipopts.h']]]
+];

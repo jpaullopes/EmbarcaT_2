@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['enviar_5fdados_5fpara_5fnuvem_0',['enviar_dados_para_nuvem',['../d9/dd2/group___h_t_t_p___c_l_i_e_n_t.html#ga82d4741d18da69b9f664459752ef22ef',1,'enviar_dados_para_nuvem(const ButtonStates_t *estados_botoes):&#160;http_client.c'],['../d9/dd2/group___h_t_t_p___c_l_i_e_n_t.html#ga82d4741d18da69b9f664459752ef22ef',1,'enviar_dados_para_nuvem(const ButtonStates_t *dados_a_enviar):&#160;http_client.c'],['../d8/dca/rosa__dos__ventos_2lib_2http__client__module_2cliente__http_8h.html#a5f58707dd08e6404e667e2ba54a54894',1,'enviar_dados_para_nuvem(const Joystick *dados_a_enviar):&#160;http_client.c'],['../de/d89/rosa__dos__ventos_2lib_2http__client__module_2http__client_8c.html#a5f58707dd08e6404e667e2ba54a54894',1,'enviar_dados_para_nuvem(const Joystick *dados_a_enviar):&#160;http_client.c']]]
+];
