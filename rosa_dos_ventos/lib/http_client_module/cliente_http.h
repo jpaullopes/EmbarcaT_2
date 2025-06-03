@@ -20,15 +20,15 @@
 
 /**
  * @def PROXY_HOST
- * @brief Endereço do servidor proxy para comunicação com a nuvem
+/**
+ * @brief Endereço do proxy para conexão com o servidor
  */
-#define PROXY_HOST "crossover.proxy.rlwy.net"      
+#define PROXY_HOST "nuvem-jp.zapto.org"
 
 /**
- * @def PROXY_PORT
- * @brief Porta do servidor proxy para comunicação com a nuvem
+ * @brief Porta do proxy para conexão com o servidor
  */
-#define PROXY_PORT 12011
+#define PROXY_PORT 80
                         
 /**
  * @brief Envia os dados do joystick para o servidor na nuvem

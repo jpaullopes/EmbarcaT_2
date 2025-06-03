@@ -1,33 +1,40 @@
 /**
  * @file wifi.h
- * @brief Interface para o módulo WiFi
- * 
- * Este arquivo contém as definições para configuração e conexão
- * do módulo WiFi do dispositivo Raspberry Pi Pico W.
+ * @brief Interface do módulo Wi-Fi
+ *
+ * Este arquivo define as constantes e funções para inicialização
+ * e controle do módulo Wi-Fi do Raspberry Pi Pico W.
  */
+
 #ifndef WIFI_H
 #define WIFI_H
 
 /**
- * @def NOME_REDE_WIFI
- * @brief SSID da rede WiFi para conexão
+ * @defgroup WIFI_MODULE Módulo Wi-Fi
+ * @{
  */
-#define NOME_REDE_WIFI "Tomada preguicosa"
 
 /**
- * @def SENHA_REDE_WIFI
- * @brief Senha da rede WiFi para conexão
+ * @brief Nome da rede Wi-Fi para conexão
  */
-#define SENHA_REDE_WIFI "cachorro123"
+#define NOME_REDE_WIFI "teste"
 
 /**
- * @brief Estabelece uma conexão WiFi com os parâmetros configurados
- * 
- * Esta função inicializa o hardware WiFi e tenta estabelecer 
- * uma conexão com a rede WiFi configurada.
- * 
- * @return 0 se a conexão foi bem-sucedida, qualquer outro valor em caso de falha
+ * @brief Senha da rede Wi-Fi para conexão
+ */
+#define SENHA_REDE_WIFI "teste123"
+
+/**
+ * @brief Inicializa e conecta o módulo Wi-Fi à rede configurada
+ *
+ * Esta função inicializa o módulo Wi-Fi do Raspberry Pi Pico W,
+ * configura o modo estação e tenta conectar à rede Wi-Fi especificada
+ * pelos defines NOME_REDE_WIFI e SENHA_REDE_WIFI.
+ *
+ * @return 0 se a conexão for bem-sucedida, -1 caso contrário
  */
 int conexao_wifi();
+
+/** @} */ // Fim do grupo WIFI_MODULE
 
 #endif

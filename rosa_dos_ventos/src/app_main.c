@@ -149,6 +149,9 @@ static void inicializar_sistema(void) {
     sleep_ms(1000);
     joystick_init();
     printf("Joystick inicializado.\n");
+    
+    // Inicializar conexão WiFi
+    wifi_conectado_status = tentar_conectar_wifi_inicialmente();
 }
 
 static bool tentar_conectar_wifi_inicialmente(void) {

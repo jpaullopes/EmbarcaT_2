@@ -27,12 +27,12 @@
 /**
  * @brief Endereço do proxy para conexão com o servidor
  */
-#define PROXY_HOST "crossover.proxy.rlwy.net"
+#define PROXY_HOST "168.138.241.89"
 
 /**
  * @brief Porta do proxy para conexão com o servidor
  */
-#define PROXY_PORT 12011
+#define PROXY_PORT 8080
                         
 
 /**
